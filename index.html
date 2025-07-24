@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>button click and hover</title>
+  </head>
+  <body>
+  <div id="navbar"></div>
+    
+<script>
+let navbar = document.getElementById('navbar');
+navbar.style.display= 'flex';
+navbar.style.backgroundColor="aqua";
+navbar.style.alignItems="center";
+navbar.style.justifyContent="space-between";
+    let logo = document.createElement('div');
+    logo.className = 'logo';
+    logo.innerText = 'Website';
+    logo.style.color ='red';
+    logo.style.fontSize="50px";
+    navbar.appendChild(logo)
+    let menu = document.createElement('ul');//li and ul part
+    let menuitems= ['Home','About','Contact','Project','Team Member'];
+    menuitems.forEach (item => {
+      let li = document.createElement('li')
+      li.innerText = item;
+      li.style.color="red";
+      li.style.fontWeight="700";
+      li.style.fontFamily="tahoma";
+      li.style.padding= "40px";
+    menu.appendChild(li);
+    menu.style.display ="flex";
+    menu.style.justifyContent= "space-around";
+    menu.style.listStyle="none";
+    li.addEventListener("mouseover",function(){
+      li.style.color ="blue"
+    });
+    li.addEventListener("mouseout",()=>{li.style.color="red"}); 
+    })
+    navbar.appendChild(menu)
+    let button = document.createElement('button') // button
+    button.innerText = 'sign in';
+    button.style.color= 'blue';
+    button.style.fontSize='30px';
+    button.style.fontFamily="tahoma";
+    button.style.fontWeight="800";
+    button.style.margin="15px";
+    button.style.padding="15px";
+    button.style.background="white";
+    button.style.borderRadius="80px";
+    navbar.appendChild(button);
+   var x =  document.createElement('IMG'); //Imgae
+    x.setAttribute("src","https://i0.wp.com/www.aftvnews.com/wp-content/uploads/2017/01/downloader-icon-wide-v1.1.1-1280-720.png?fit=1280%2C720&quality=100&ssl=1")
+    x.setAttribute("width","304");
+    x.setAttribute("height",'228'); 
+    document.body.append(x)
+
+  var btn2 = document.createElement('button');
+      btn2.innerText = "Enter your name";
+      btn2.addEventListener("click",function(){ 
+  let name  = prompt ("enter your name");
+  alert("Your name is " + name );
+});
+
+document.body.append(btn2);
+
+
+
+
+  </script>
+</body>
+</html>
